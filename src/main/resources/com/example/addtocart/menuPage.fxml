@@ -1,15 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
-
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.addtocart.menuPageController">
    <children>
       <AnchorPane prefHeight="800.0" prefWidth="1100.0">
          <children>
-            <BorderPane prefHeight="800.0" prefWidth="1100.0" />
+            <BorderPane prefHeight="800.0" prefWidth="1100.0">
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <top>
+                        <AnchorPane prefHeight="70.0" prefWidth="1100.0" style="-fx-background-color: #2c2c2c;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button layoutX="795.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" text="Drinks" />
+                              <Button layoutX="155.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" text="Donuts" />
+                              <Button layoutX="477.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" text="Breakfast" />
+                           </children>
+                        </AnchorPane>
+                     </top>
+                     <center>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="727.0" prefWidth="1100.0" style="-fx-background-color: #2c2c2c;" styleClass="table-view" stylesheets="@../../../assets/mainFormDesign.css" />
+                          </content>
+                        </ScrollPane>
+                     </center>
+                  </BorderPane>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="130.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="130.0" fitWidth="1100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../assets/bannarofdonuts.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="958.0" layoutY="86.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" text="Sign Out" />
+                        <Button fx:id="home" layoutX="841.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#homeButton" prefHeight="30.0" prefWidth="111.0" styleClass="radius" stylesheets="@../../../assets/mainFormDesign.css" text="Home" />
+                     </children>
+                  </AnchorPane>
+               </top></BorderPane>
          </children>
       </AnchorPane>
    </children>
