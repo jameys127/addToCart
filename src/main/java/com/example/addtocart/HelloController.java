@@ -44,23 +44,19 @@ public class HelloController implements Initializable {
 
 
 
-    @FXML
-    void getProducts(MouseEvent event) {
-        if(Products.getSelectionModel().getSelectedItem() == "Pink Sprinkles"){
-            Product donut = new Product("Pink Sprinkles",
-                    "Pink Frosting with Rainbow Sprinkles.",
-                    4.25);
-            pinkSprinkName.setText(donut.getName());
-            pinkSprinkDesc.setText(donut.getDesc());
-        }
-        if(Products.getSelectionModel().getSelectedItem() == "Maple Bar"){
-            Product donut2 = new Product("Maple Bar",
-                    "Longer donut with maple top and choice of filling.",
-                    3.25);
-            pinkSprinkName.setText(donut2.getName());
-            pinkSprinkDesc.setText(donut2.getDesc());
-        }
-    }
+//    @FXML
+//    void getProducts(MouseEvent event) {
+//        if(Products.getSelectionModel().getSelectedItem() == "Pink Sprinkles"){
+//            Product donut = new Product("Pink Sprinkles",
+//                    4.25);
+//            pinkSprinkName.setText(donut.getName());
+//        }
+//        if(Products.getSelectionModel().getSelectedItem() == "Maple Bar"){
+//            Product donut2 = new Product("Maple Bar",
+//                    3.25);
+//            pinkSprinkName.setText(donut2.getName());
+//        }
+//    }
 
 
 

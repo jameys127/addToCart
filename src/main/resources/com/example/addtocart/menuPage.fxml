@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.StackPane?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.addtocart.menuPageController">
@@ -18,17 +21,37 @@
                      <top>
                         <AnchorPane prefHeight="70.0" prefWidth="1100.0" style="-fx-background-color: #2c2c2c;" BorderPane.alignment="CENTER">
                            <children>
-                              <Button layoutX="795.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" text="Drinks" />
-                              <Button layoutX="155.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" text="Donuts" />
-                              <Button layoutX="477.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" text="Breakfast" />
+                              <Button layoutX="795.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Drinks">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></Button>
+                              <Button layoutX="155.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Donuts">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></Button>
+                              <Button layoutX="477.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Breakfast">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></Button>
                            </children>
                         </AnchorPane>
                      </top>
                      <center>
-                        <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="727.0" prefWidth="1100.0" style="-fx-background-color: #2c2c2c;" styleClass="table-view" stylesheets="@../../../assets/mainFormDesign.css" />
-                          </content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2c2c2c;" BorderPane.alignment="CENTER">
+                           <content>
+                              <AnchorPane prefHeight="598.0" prefWidth="1098.0" style="-fx-background-color: #2c2c2c;">
+                                 <children>
+                                    <GridPane fx:id="productGrid" prefHeight="24.0" prefWidth="128.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
                         </ScrollPane>
                      </center>
                   </BorderPane>
@@ -41,8 +64,16 @@
                               <Image url="@../../../assets/bannarofdonuts.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="958.0" layoutY="86.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" text="Sign Out" />
-                        <Button fx:id="home" layoutX="841.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#homeButton" prefHeight="30.0" prefWidth="111.0" styleClass="radius" stylesheets="@../../../assets/mainFormDesign.css" text="Home" />
+                        <Button layoutX="958.0" layoutY="86.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Sign Out">
+                           <styleClass>
+                              <String fx:value="radius" />
+                              <String fx:value="shadow" />
+                           </styleClass></Button>
+                        <Button fx:id="home" layoutX="841.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#homeButton" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Home">
+                           <styleClass>
+                              <String fx:value="radius" />
+                              <String fx:value="shadow" />
+                           </styleClass></Button>
                      </children>
                   </AnchorPane>
                </top></BorderPane>

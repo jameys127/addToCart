@@ -1,14 +1,16 @@
 package com.example.addtocart.Products;
 
+import javafx.scene.image.Image;
+
 public class Product {
     private String name;
-    private String desc;
     private double price;
+    private String image;
 
-    public Product(String name, String desc, double price) {
+    public Product(String name, double price, String image) {
         this.name = name;
-        this.desc = desc;
         this.price = price;
+        this.image = image;
     }
 
     public String getName() {
@@ -19,14 +21,6 @@ public class Product {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -34,4 +28,13 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
+
