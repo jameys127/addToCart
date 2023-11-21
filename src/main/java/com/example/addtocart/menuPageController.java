@@ -24,9 +24,12 @@ import java.util.ResourceBundle;
 public class menuPageController implements Initializable {
 
     String pinkSprinkImage = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\chocolateoldfashioned.jpeg";
-
-    private int row = 0;
     private int column = 0;
+    private int row = 0;
+    private int column1 = 0;
+    private int row1 = 0;
+    private int column2 = 0;
+    private int row2 = 0;
 
     @FXML
     private Button breakfastMenuButton;
@@ -93,7 +96,6 @@ public class menuPageController implements Initializable {
 
 
     public void menuDisplayDonut(String name, Double price, String image){
-        productGridDonuts.getRowConstraints().clear();
         productGridDonuts.getColumnConstraints().clear();
 
         try{
@@ -122,8 +124,8 @@ public class menuPageController implements Initializable {
     }
 
     public void menuDisplayBreakfast(String name, Double price, String image){
-        productGridBreakfast.getRowConstraints().clear();
         productGridBreakfast.getColumnConstraints().clear();
+
 
         try{
             FXMLLoader load = new FXMLLoader();
@@ -133,12 +135,12 @@ public class menuPageController implements Initializable {
             cardCont.productData(name, price, image);
 
 
-            if (column == 3) {
-                column = 0;
-                row += 1;
+            if (column1 == 3) {
+                column1 = 0;
+                row1 += 1;
             }
 
-            productGridBreakfast.add(pane, column++, row);
+            productGridBreakfast.add(pane, column1++, row1);
             GridPane.setMargin(pane, new Insets(10));
 
 
@@ -151,7 +153,6 @@ public class menuPageController implements Initializable {
     }
 
     public void menuDisplayDrinks(String name, Double price, String image){
-        productGridDrinks.getRowConstraints().clear();
         productGridDrinks.getColumnConstraints().clear();
 
         try{
@@ -161,22 +162,17 @@ public class menuPageController implements Initializable {
             cardProductController cardCont = load.getController();
             cardCont.productData(name, price, image);
 
-
-            if (column == 3) {
-                column = 0;
-                row += 1;
+            if (column2 == 3) {
+                column2 = 0;
+                row2 += 1;
             }
 
-            productGridDrinks.add(pane, column++, row);
+            productGridDrinks.add(pane, column2++, row2);
             GridPane.setMargin(pane, new Insets(10));
-
-
 
         }catch(Exception e){
             e.printStackTrace();
         }
-
-
     }
 
 
@@ -185,12 +181,35 @@ public class menuPageController implements Initializable {
         menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
         menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
         menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+
 
 
         menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
         menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
 
 
+
+        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
         menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
 
     }
