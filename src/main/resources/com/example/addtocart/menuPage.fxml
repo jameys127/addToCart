@@ -21,17 +21,17 @@
                      <top>
                         <AnchorPane prefHeight="70.0" prefWidth="1100.0" style="-fx-background-color: #2c2c2c;" BorderPane.alignment="CENTER">
                            <children>
-                              <Button layoutX="795.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Drinks">
+                              <Button fx:id="drinkMenuButton" layoutX="795.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#drinkVisible" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Drinks">
                                  <styleClass>
                                     <String fx:value="radius" />
                                     <String fx:value="shadow" />
                                  </styleClass></Button>
-                              <Button layoutX="155.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Donuts">
+                              <Button fx:id="donutMenuButton" layoutX="155.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#donutVisible" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Donuts">
                                  <styleClass>
                                     <String fx:value="radius" />
                                     <String fx:value="shadow" />
                                  </styleClass></Button>
-                              <Button layoutX="477.0" layoutY="16.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Breakfast">
+                              <Button fx:id="breakfastMenuButton" layoutX="477.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#breakfastVisible" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="Breakfast">
                                  <styleClass>
                                     <String fx:value="radius" />
                                     <String fx:value="shadow" />
@@ -40,19 +40,49 @@
                         </AnchorPane>
                      </top>
                      <center>
-                        <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2c2c2c;" BorderPane.alignment="CENTER">
-                           <content>
-                              <AnchorPane prefHeight="598.0" prefWidth="1098.0" style="-fx-background-color: #2c2c2c;">
-                                 <children>
-                                    <GridPane fx:id="productGrid" prefHeight="24.0" prefWidth="128.0">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                      </columnConstraints>
-                                    </GridPane>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </ScrollPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ScrollPane fx:id="donutMenuPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2c2c2c;">
+                                 <content>
+                                    <AnchorPane prefHeight="598.0" prefWidth="1098.0" style="-fx-background-color: #2c2c2c;">
+                                       <children>
+                                          <GridPane fx:id="productGridDonuts" layoutX="93.0" layoutY="2.0" prefHeight="24.0" prefWidth="128.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                              <ScrollPane fx:id="breakfastMenuPane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2c2c2c;" visible="false">
+                                 <content>
+                                    <AnchorPane prefHeight="598.0" prefWidth="1098.0" style="-fx-background-color: #2c2c2c;">
+                                       <children>
+                                          <GridPane fx:id="productGridBreakfast" layoutX="93.0" layoutY="2.0" prefHeight="24.0" prefWidth="128.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                              <ScrollPane fx:id="drinkMenuPane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2c2c2c;" visible="false">
+                                 <content>
+                                    <AnchorPane prefHeight="598.0" prefWidth="1098.0" style="-fx-background-color: #2c2c2c;">
+                                       <children>
+                                          <GridPane fx:id="productGridDrinks" layoutX="93.0" layoutY="2.0" prefHeight="24.0" prefWidth="128.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </StackPane>
                      </center>
                   </BorderPane>
                </center>
