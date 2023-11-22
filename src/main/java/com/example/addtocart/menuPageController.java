@@ -91,12 +91,20 @@ public class menuPageController implements Initializable {
         stage.setScene(new Scene(root));
 
     }
+    @FXML
+    void signOutButton(MouseEvent event) throws IOException {
+        Stage stage = (Stage) home.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Sample.fxml"));
+        stage.setTitle("Log In");
+        stage.setScene(new Scene(root));
+    }
 
     Product pinkSprink = new Product("Pink Sprinkled Donut", 2.99, pinkSprinkImage);
 
 
     public void menuDisplayDonut(String name, Double price, String image){
         productGridDonuts.getColumnConstraints().clear();
+        productGridDonuts.getRowConstraints().clear();
 
         try{
             FXMLLoader load = new FXMLLoader();
@@ -125,7 +133,7 @@ public class menuPageController implements Initializable {
 
     public void menuDisplayBreakfast(String name, Double price, String image){
         productGridBreakfast.getColumnConstraints().clear();
-
+        productGridBreakfast.getRowConstraints().clear();
 
         try{
             FXMLLoader load = new FXMLLoader();
@@ -154,6 +162,7 @@ public class menuPageController implements Initializable {
 
     public void menuDisplayDrinks(String name, Double price, String image){
         productGridDrinks.getColumnConstraints().clear();
+        productGridDrinks.getRowConstraints().clear();
 
         try{
             FXMLLoader load = new FXMLLoader();
@@ -174,6 +183,7 @@ public class menuPageController implements Initializable {
             e.printStackTrace();
         }
     }
+
 
 
     @Override

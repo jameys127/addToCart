@@ -56,7 +56,10 @@ public class mainPageController {
     }
 
     @FXML
-    void signoutButton(MouseEvent event) {
-
+    void signoutButton(MouseEvent event) throws IOException {
+        Stage stage = (Stage) menu.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Sample.fxml"));
+        stage.setTitle("Log In");
+        stage.setScene(new Scene(root));
     }
 }

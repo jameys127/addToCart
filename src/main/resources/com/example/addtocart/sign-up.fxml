@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.addtocart.SignUpController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="239.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="243.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/DonutLogoLogin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="415.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="65.0" layoutX="150.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/lock.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="34.0" layoutY="105.0" text="Username:" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="37.0" layoutY="156.0" text="Password:" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf_username" layoutX="144.0" layoutY="108.0" prefHeight="25.0" prefWidth="149.0" promptText="Enter Username" />
+            <PasswordField fx:id="tf_password" layoutX="144.0" layoutY="159.0" promptText="Enter Password" />
+            <Button fx:id="button_signup" layoutX="116.0" layoutY="315.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-cursor: hand; -fx-background-color: #ff0000;" text="Signup">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_log_in" layoutX="210.0" layoutY="354.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Log In!" textFill="#2200ff" underline="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="15.0" layoutY="356.0" text="Already a member?" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="rb_bigbitedonuts" layoutX="128.0" layoutY="235.0" mnemonicParsing="false" text="Big Bite Donuts" textFill="#ffee00">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="rb_none" layoutX="128.0" layoutY="270.0" mnemonicParsing="false" text="None" textFill="#ffee00">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </RadioButton>
+            <Label layoutX="96.0" layoutY="200.0" text="Favorite Donut Shop?" textFill="#ffee00">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
