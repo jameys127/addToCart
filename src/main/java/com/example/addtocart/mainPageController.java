@@ -62,4 +62,5 @@ public class mainPageController {
         stage.setTitle("Log In");
         stage.setScene(new Scene(root));
     }
+
 }
