@@ -22,12 +22,6 @@ public class mainPageController {
     private Button menu;
 
     @FXML
-    private Button search;
-
-    @FXML
-    private TextField searchBar;
-
-    @FXML
     private Button signout;
 
     @FXML
@@ -46,13 +40,6 @@ public class mainPageController {
         Parent root = FXMLLoader.load(getClass().getResource("menuPage.fxml"));
         stage.setTitle("Menu");
         stage.setScene(new Scene(root));
-
-
-    }
-
-    @FXML
-    void searchbarButton(MouseEvent event) {
-
     }
 
     @FXML

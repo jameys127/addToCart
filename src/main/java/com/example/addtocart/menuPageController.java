@@ -30,7 +30,30 @@ import java.util.stream.Collectors;
 
 public class menuPageController implements Initializable {
 
-    String pinkSprinkImage = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\chocolateoldfashioned.jpeg";
+    String pinkSprinkImage = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\Simpsons-Doughnuts-4238-Copy-1.jpg";
+    String chocolateOldFashioned = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\chocolateoldfashioned.jpeg";
+    String oldFashioned = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\donut-blog-3.jpg";
+    String jellyDonut = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\1200px-Jelly-Donut.jpg";
+    String mapleBar = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\Maple-Bar-Donuts1-scaled.jpg";
+    String appleFritter = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\Apple-Fritters-DSC_0145-4.jpg";
+    String eclair = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\french-chocolate-eclairs-recipe.jpg";
+    String glazedDonut = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\PSOG_Image.jpg";
+    String donutHoles = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\20150608-P6080031.jpg";
+    String coffee = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\classic-coffee-1536922351-4302729.jpeg";
+    String caramel = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\caramellatte.jpg";
+    String vanilla = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\Vanilla_Latte.jpg";
+    String orange = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\minuteMaidOrangeJuice.png";
+    String cappuciii = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\1200px-Cappuccino_at_Sightglass_Coffee.jpg";
+    String decafcoffee = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\5-Unexpected-Side-Effects-Of-Decaf-Coffee-You-Must-Be-Aware-Of.jpg";
+    String bottledmilk = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\HDPE-Milk-1L.jpg";
+    String hotchocky = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\Indulgent-Hot-Chocolate-FT-RECIPE0223-fd36942ef266417ab40440374fc76a15.jpg";
+    String bagelbreakfast = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\bagel418907.jpeg";
+    String burrito = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\breakfastburitto69134t1.jpeg";
+    String egg = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\breakfast-egg-sandwich-recipe-9.jpg";
+    String muffin = "C:\\Users\\jamey\\IdeaProjects\\addToCart\\src\\main\\resources\\assets\\chocolate-chip-muffins-featured.jpg";
+
+
+
     private int column = 0;
     private int row = 0;
     private int column1 = 0;
@@ -90,7 +113,9 @@ public class menuPageController implements Initializable {
         row3 = 0;
         productGridSearch.getChildren().clear();
         List<Product> products = new ArrayList<Product>();
-        Collections.addAll(products, pinkSprink, pinkSprink1, pinkSprink2, pinkSprink3, pinkSprink4, pinkSprink5, pinkSprink6, pinkSprink7);
+        Collections.addAll(products, pinkSprink, chocolateoldFashioned, oldfashoned, jellydonut, ecclair, applefritter, glazed, donutholes, maple,
+                                     brewedcoffee, decaf, caramellatte, vanillalatte, cappuccino, hotChocolate, milk, orangejuice,
+                                     bagel, breakfastburrito, eggsandwich, chocolatemuffin);
         List<String> productNames = searchProducts(searchBar.getText(), products);
         for(Product obj : products){
             if(productNames.contains(obj.getName())){
@@ -157,15 +182,27 @@ public class menuPageController implements Initializable {
         stage.setTitle("Log In");
         stage.setScene(new Scene(root));
     }
-
-    Product pinkSprink = new Product(1, "Pink Sprinkled Donut", 2.99, pinkSprinkImage);
-    Product pinkSprink1 = new Product(2, "Yellow Sprinkled Donut", 2.99, pinkSprinkImage);
-    Product pinkSprink2 = new Product(3, "Green Sprinkled Donut", 2.99, pinkSprinkImage);
-    Product pinkSprink3 = new Product(4, "Blue Sprinkled Donut", 2.99, pinkSprinkImage);
-    Product pinkSprink4 = new Product(5, "Red Sprinkled Donut", 2.99, pinkSprinkImage);
-    Product pinkSprink5 = new Product(6, "Purple Sprinkled Donut", 2.99, pinkSprinkImage);
-    Product pinkSprink6 = new Product(7, "Orange Sprinkled Donut", 2.99, pinkSprinkImage);
-    Product pinkSprink7 = new Product(8, "Teal Sprinkled Donut", 2.99, pinkSprinkImage);
+    Product bagel = new Product("Bagel with Cream Cheese", 2.50, bagelbreakfast);
+    Product breakfastburrito = new Product("Breakfast Burrito", 5.65, burrito);
+    Product eggsandwich = new Product("Egg Sandwich", 2.50, egg);
+    Product chocolatemuffin = new Product("Chocolate Muffin", 2.15, muffin);
+    Product brewedcoffee = new Product("Classic Brewed Coffee", 3.50, coffee);
+    Product caramellatte = new Product("Iced Caramel Latte", 6.25, caramel);
+    Product vanillalatte = new Product("Vanilla Latte", 6.25, vanilla);
+    Product orangejuice = new Product("Minute Maid Orange Juice", 1.50, orange);
+    Product decaf = new Product("Classic Decaf coffee", 3.50, decafcoffee);
+    Product cappuccino = new Product("Cappuccino", 6.75, cappuciii);
+    Product milk = new Product("Bottled Milk", 1.50, bottledmilk);
+    Product hotChocolate = new Product("Hot Chocolate", 3.19, hotchocky);
+    Product pinkSprink = new Product("Pink Sprinkled Donut", 2.99, pinkSprinkImage);
+    Product chocolateoldFashioned = new Product("Chocolate Old Fashioned", 3.99, chocolateOldFashioned);
+    Product oldfashoned = new Product("Glazed Old Fashioned", 3.99, oldFashioned);
+    Product jellydonut = new Product("Jelly Filled Donut", 3.99, jellyDonut);
+    Product ecclair = new Product("Chocolate Eclair", 4.99, eclair);
+    Product applefritter = new Product("Apple Fritter", 4.99, appleFritter);
+    Product glazed = new Product("Glazed Donut", 1.99, glazedDonut);
+    Product donutholes = new Product("4-piece Donut Holes", 3.99, donutHoles);
+    Product maple = new Product("Maple Bar", 4.99, mapleBar);
 
     public void menuDisplaySearch(String name, Double price, String image) {
         productGridSearch.getColumnConstraints().clear();
@@ -280,39 +317,32 @@ public class menuPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        menuDisplayDonut(glazed.getName(), glazed.getPrice(), glazed.getImage());
         menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayDonut(pinkSprink1.getName(), pinkSprink1.getPrice(), pinkSprink1.getImage());
-        menuDisplayDonut(pinkSprink2.getName(), pinkSprink2.getPrice(), pinkSprink2.getImage());
-        menuDisplayDonut(pinkSprink3.getName(), pinkSprink3.getPrice(), pinkSprink3.getImage());
-        menuDisplayDonut(pinkSprink4.getName(), pinkSprink4.getPrice(), pinkSprink4.getImage());
-        menuDisplayDonut(pinkSprink5.getName(), pinkSprink5.getPrice(), pinkSprink5.getImage());
-        menuDisplayDonut(pinkSprink6.getName(), pinkSprink6.getPrice(), pinkSprink6.getImage());
-        menuDisplayDonut(pinkSprink7.getName(), pinkSprink7.getPrice(), pinkSprink7.getImage());
-        menuDisplayDonut(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDonut(oldfashoned.getName(), oldfashoned.getPrice(), oldfashoned.getImage());
+        menuDisplayDonut(chocolateoldFashioned.getName(), chocolateoldFashioned.getPrice(), chocolateoldFashioned.getImage());
+        menuDisplayDonut(jellydonut.getName(), jellydonut.getPrice(), jellydonut.getImage());
+        menuDisplayDonut(applefritter.getName(), applefritter.getPrice(), applefritter.getImage());
+        menuDisplayDonut(ecclair.getName(), ecclair.getPrice(), ecclair.getImage());
+        menuDisplayDonut(maple.getName(), maple.getPrice(), maple.getImage());
+        menuDisplayDonut(donutholes.getName(), donutholes.getPrice(), donutholes.getImage());
+
+
+        menuDisplayBreakfast(bagel.getName(), bagel.getPrice(), bagel.getImage());
+        menuDisplayBreakfast(breakfastburrito.getName(), breakfastburrito.getPrice(), breakfastburrito.getImage());
+        menuDisplayBreakfast(eggsandwich.getName(), eggsandwich.getPrice(), eggsandwich.getImage());
+        menuDisplayBreakfast(chocolatemuffin.getName(), chocolatemuffin.getPrice(), chocolatemuffin.getImage());
 
 
 
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayBreakfast(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-
-
-
-        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
-        menuDisplayDrinks(pinkSprink.getName(), pinkSprink.getPrice(), pinkSprink.getImage());
+        menuDisplayDrinks(brewedcoffee.getName(), brewedcoffee.getPrice(), brewedcoffee.getImage());
+        menuDisplayDrinks(decaf.getName(), decaf.getPrice(), decaf.getImage());
+        menuDisplayDrinks(caramellatte.getName(), caramellatte.getPrice(), caramellatte.getImage());
+        menuDisplayDrinks(vanillalatte.getName(), vanillalatte.getPrice(), vanillalatte.getImage());
+        menuDisplayDrinks(cappuccino.getName(), cappuccino.getPrice(), cappuccino.getImage());
+        menuDisplayDrinks(hotChocolate.getName(), hotChocolate.getPrice(), hotChocolate.getImage());
+        menuDisplayDrinks(milk.getName(), milk.getPrice(), milk.getImage());
+        menuDisplayDrinks(orangejuice.getName(), orangejuice.getPrice(), orangejuice.getImage());
 
     }
 }
