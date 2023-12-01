@@ -241,22 +241,16 @@ public class menuPageController implements Initializable {
             cardProductController cardCont = load.getController();
             cardCont.productData(name, price, image);
 
-
             if (column == 3) {
                 column = 0;
                 row += 1;
             }
-
             productGridDonuts.add(pane, column++, row);
             GridPane.setMargin(pane, new Insets(10));
-
-
 
         }catch(Exception e){
             e.printStackTrace();
         }
-
-
     }
 
     public void menuDisplayBreakfast(String name, Double price, String image){
@@ -270,22 +264,16 @@ public class menuPageController implements Initializable {
             cardProductController cardCont = load.getController();
             cardCont.productData(name, price, image);
 
-
             if (column1 == 3) {
                 column1 = 0;
                 row1 += 1;
             }
-
             productGridBreakfast.add(pane, column1++, row1);
             GridPane.setMargin(pane, new Insets(10));
-
-
 
         }catch(Exception e){
             e.printStackTrace();
         }
-
-
     }
 
     public void menuDisplayDrinks(String name, Double price, String image){

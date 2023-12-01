@@ -68,16 +68,16 @@
                                     <Font name="Bodoni MT" size="22.0" />
                                  </font>
                               </Label>
-                              <AnchorPane layoutX="32.0" layoutY="138.0" prefHeight="21.0" prefWidth="129.0" stylesheets="@../../../assets/mainFormDesign.css">
+                              <AnchorPane layoutX="26.0" layoutY="132.0" prefHeight="15.0" prefWidth="91.0" stylesheets="@../../../assets/mainFormDesign.css">
                                  <styleClass>
                                     <String fx:value="shadow" />
                                     <String fx:value="white-bg" />
                                     <String fx:value="radius" />
                                  </styleClass>
                                  <children>
-                                    <Label layoutX="8.0" prefHeight="21.0" prefWidth="115.0" text="NO REFUNDS!" textFill="RED">
+                                    <Label layoutX="9.0" prefHeight="14.0" prefWidth="83.0" text="NO REFUNDS!" textFill="RED">
                                        <font>
-                                          <Font name="Bodoni MT" size="16.0" />
+                                          <Font name="Berlin Sans FB" size="12.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -90,65 +90,21 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2c2c2c;" BorderPane.alignment="CENTER">
                      <children>
-                        <Label layoutX="342.0" layoutY="24.0" prefHeight="78.0" prefWidth="416.0" text="Hot New Deals" textAlignment="CENTER" textFill="RED" underline="true">
+                        <Label layoutX="418.0" layoutY="23.0" prefHeight="78.0" prefWidth="264.0" text="About Us" textAlignment="CENTER" textFill="RED" underline="true">
                            <font>
                               <Font name="Bodoni MT" size="64.0" />
                            </font>
                         </Label>
-                        <AnchorPane layoutX="698.0" layoutY="140.0" prefHeight="247.0" prefWidth="254.0" stylesheets="@../../../assets/mainFormDesign.css">
-                           <styleClass>
-                              <String fx:value="shadow" />
-                              <String fx:value="white-bg" />
-                              <String fx:value="radius" />
-                           </styleClass>
-                        </AnchorPane>
-                        <AnchorPane layoutX="154.0" layoutY="140.0" prefHeight="247.0" prefWidth="222.0" stylesheets="@../../../assets/mainFormDesign.css">
-                           <styleClass>
-                              <String fx:value="shadow" />
-                              <String fx:value="white-bg" />
-                              <String fx:value="radius" />
-                           </styleClass>
-                           <children>
-                              <ImageView fitHeight="236.0" fitWidth="189.0" layoutX="23.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../assets/3-donuts-2-david-palmer.jpg" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
-                        <ImageView fitHeight="232.0" fitWidth="271.0" layoutX="710.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="296.0" fitWidth="539.0" layoutX="51.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../assets/2-dozen-because-they.jpg" />
+                              <Image url="@../../../assets/istockphoto-1094440264-612x612.jpg" />
                            </image>
                         </ImageView>
-                        <Label layoutX="168.0" layoutY="406.0" text="BUY 2 GET 1 FREE!" textFill="WHITE">
+                        <Label layoutX="550.0" layoutY="152.0" prefHeight="311.0" prefWidth="517.0" text="We are 3rd generation donut bakers that want to create an easy way to send our donuts to all corners of northridge. We are passionate about art of breakfast baking and we will make sure that your order arrives at your house with same-day delivery, hot and delicious. Its our GUARANTEE!" textFill="RED" wrapText="true">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="Bodoni MT" size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="612.0" layoutY="406.0" text="BUY DOZEN BOX GET SECOND 50% OFF" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="b1g50off" layoutX="736.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#b1g50offButton" prefHeight="73.0" prefWidth="181.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="ORDER NOW">
-                           <font>
-                              <Font name="Berlin Sans FB Demi Bold" size="22.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="shadow" />
-                              <String fx:value="radius" />
-                           </styleClass>
-                        </Button>
-                        <Button fx:id="b2g1" layoutX="175.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#b2g1Button" prefHeight="73.0" prefWidth="181.0" style="-fx-background-color: ff0000;" stylesheets="@../../../assets/mainFormDesign.css" text="ORDER NOW">
-                           <font>
-                              <Font name="Berlin Sans FB Demi Bold" size="22.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="shadow" />
-                              <String fx:value="radius" />
-                           </styleClass>
-                        </Button>
                      </children></AnchorPane>
                </center>
             </BorderPane>

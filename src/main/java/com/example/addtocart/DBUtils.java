@@ -45,7 +45,7 @@ public class DBUtils {
         ResultSet resultSet = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bigbitedonuts", "root", "dinosaur1234");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bigdonuts", "root", "toor");
             psCheckUserExists = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
             psCheckUserExists.setString(1, username);
             resultSet = psCheckUserExists.executeQuery();
@@ -106,7 +106,7 @@ public class DBUtils {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bigbitedonuts", "root", "dinosaur1234");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bigdonuts", "root", "toor");
             preparedStatement = connection.prepareStatement("SELECT password, FaveDonutShop FROM users WHERE username = ?");
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();

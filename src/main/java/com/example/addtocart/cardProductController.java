@@ -50,6 +50,14 @@ public class cardProductController implements Initializable {
     }
     @FXML
     void addItem(MouseEvent event) {
+        if(spinner.getValue() == 0){
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Nothing was added!");
+            alert.setHeaderText(null);
+            alert.setContentText("You added a product with zero quantity! Try again.");
+            alert.showAndWait();
+            return;
+        }
         alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Added");
         alert.setHeaderText(null);

@@ -12,11 +12,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class mainPageController {
-    @FXML
-    private Button b1g50off;
-
-    @FXML
-    private Button b2g1;
 
     @FXML
     private Button menu;
@@ -24,15 +19,6 @@ public class mainPageController {
     @FXML
     private Button signout;
 
-    @FXML
-    void b1g50offButton(MouseEvent event) {
-
-    }
-
-    @FXML
-    void b2g1Button(MouseEvent event) {
-
-    }
 
     @FXML
     void menuButton(MouseEvent event) throws IOException {
