@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class loginController implements Initializable {
@@ -22,9 +23,23 @@ public class loginController implements Initializable {
     @FXML
     private TextField tf_password;
 
+    public void deleteCartContents(){
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bigbitedonuts", "root", "dinosaur1234");
+            statement = connection.prepareStatement("DELETE FROM bigbitedonuts.order");
+            statement.executeUpdate();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        deleteCartContents();
         button_login.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

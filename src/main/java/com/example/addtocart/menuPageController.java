@@ -1,29 +1,21 @@
 package com.example.addtocart;
 
-import com.example.addtocart.Products.Product;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -86,6 +78,9 @@ public class menuPageController implements Initializable {
 
     @FXML
     private Label noResults;
+
+    @FXML
+    private Button cart;
 
     @FXML
     private Button home;
@@ -166,6 +161,13 @@ public class menuPageController implements Initializable {
         searchMenuPane.setVisible(false);
     }
 
+    @FXML
+    void cartButton(MouseEvent event) throws IOException {
+        Stage stage = (Stage) cart.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("cartMain.fxml"));
+        stage.setTitle("Cart");
+        stage.setScene(new Scene(root));
+    }
 
     @FXML
     void homeButton(MouseEvent event) throws IOException {
@@ -182,27 +184,27 @@ public class menuPageController implements Initializable {
         stage.setTitle("Log In");
         stage.setScene(new Scene(root));
     }
-    Product bagel = new Product("Bagel with Cream Cheese", 2.50, bagelbreakfast);
-    Product breakfastburrito = new Product("Breakfast Burrito", 5.65, burrito);
-    Product eggsandwich = new Product("Egg Sandwich", 2.50, egg);
-    Product chocolatemuffin = new Product("Chocolate Muffin", 2.15, muffin);
-    Product brewedcoffee = new Product("Classic Brewed Coffee", 3.50, coffee);
-    Product caramellatte = new Product("Iced Caramel Latte", 6.25, caramel);
-    Product vanillalatte = new Product("Vanilla Latte", 6.25, vanilla);
-    Product orangejuice = new Product("Minute Maid Orange Juice", 1.50, orange);
-    Product decaf = new Product("Classic Decaf coffee", 3.50, decafcoffee);
-    Product cappuccino = new Product("Cappuccino", 6.75, cappuciii);
-    Product milk = new Product("Bottled Milk", 1.50, bottledmilk);
-    Product hotChocolate = new Product("Hot Chocolate", 3.19, hotchocky);
-    Product pinkSprink = new Product("Pink Sprinkled Donut", 2.99, pinkSprinkImage);
-    Product chocolateoldFashioned = new Product("Chocolate Old Fashioned", 3.99, chocolateOldFashioned);
-    Product oldfashoned = new Product("Glazed Old Fashioned", 3.99, oldFashioned);
-    Product jellydonut = new Product("Jelly Filled Donut", 3.99, jellyDonut);
-    Product ecclair = new Product("Chocolate Eclair", 4.99, eclair);
-    Product applefritter = new Product("Apple Fritter", 4.99, appleFritter);
-    Product glazed = new Product("Glazed Donut", 1.99, glazedDonut);
-    Product donutholes = new Product("4-piece Donut Holes", 3.99, donutHoles);
-    Product maple = new Product("Maple Bar", 4.99, mapleBar);
+    Product bagel = new Product("Bagel with Cream Cheese", 2.50, bagelbreakfast, 0);
+    Product breakfastburrito = new Product("Breakfast Burrito", 5.65, burrito, 0);
+    Product eggsandwich = new Product("Egg Sandwich", 2.50, egg, 0);
+    Product chocolatemuffin = new Product("Chocolate Muffin", 2.15, muffin, 0);
+    Product brewedcoffee = new Product("Classic Brewed Coffee", 3.50, coffee, 0);
+    Product caramellatte = new Product("Iced Caramel Latte", 6.25, caramel, 0);
+    Product vanillalatte = new Product("Vanilla Latte", 6.25, vanilla, 0);
+    Product orangejuice = new Product("Minute Maid Orange Juice", 1.50, orange, 0);
+    Product decaf = new Product("Classic Decaf coffee", 3.50, decafcoffee, 0);
+    Product cappuccino = new Product("Cappuccino", 6.75, cappuciii, 0);
+    Product milk = new Product("Bottled Milk", 1.50, bottledmilk, 0);
+    Product hotChocolate = new Product("Hot Chocolate", 3.19, hotchocky, 0);
+    Product pinkSprink = new Product("Pink Sprinkled Donut", 2.99, pinkSprinkImage, 0);
+    Product chocolateoldFashioned = new Product("Chocolate Old Fashioned", 3.99, chocolateOldFashioned, 0);
+    Product oldfashoned = new Product("Glazed Old Fashioned", 3.99, oldFashioned, 0);
+    Product jellydonut = new Product("Jelly Filled Donut", 3.99, jellyDonut, 0);
+    Product ecclair = new Product("Chocolate Eclair", 4.99, eclair, 0);
+    Product applefritter = new Product("Apple Fritter", 4.99, appleFritter, 0);
+    Product glazed = new Product("Glazed Donut", 1.99, glazedDonut, 0);
+    Product donutholes = new Product("4-piece Donut Holes", 3.99, donutHoles, 0);
+    Product maple = new Product("Maple Bar", 4.99, mapleBar, 0);
 
     public void menuDisplaySearch(String name, Double price, String image) {
         productGridSearch.getColumnConstraints().clear();
