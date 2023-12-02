@@ -36,19 +36,11 @@ public class cartController implements Initializable {
     private Label subtotalLabel;
     @FXML
     private Button menu_btn;
+    @FXML
+    private Button checkout_btn;
     private ObservableList<Product> tableData = null;
     private double total = 0;
 
-//    private CartData cartData;
-
-//    public CartController() {
-//        this.cartData = new CartData();
-//    }
-
-//    public void addItemToCart(Product product) {
-//        cartData.addItem(product);
-//        updateCartView();
-//    }
 
     public ObservableList<Product> listData(){
         ObservableList<Product> dummy = FXCollections.observableArrayList();
@@ -130,8 +122,12 @@ public class cartController implements Initializable {
         double d = b.doubleValue();
         subtotalLabel.setText(String.valueOf(d));
     }
-
-    public void switchToCheckoutScene(ActionEvent event) {
+    @FXML
+    void switchToCheckoutScene(MouseEvent event) throws IOException {
+        Stage stage = (Stage) checkout_btn.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Checkout.fxml"));
+        stage.setTitle("CheckOut");
+        stage.setScene(new Scene(root));
 //        try {
 //            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Checkout.fxml"));
 //            Parent checkoutRoot = loader.load();

@@ -76,7 +76,7 @@
                               </TableView>
                            </content>
                         </ScrollPane>
-                        <Button fx:id="checkout_btn" layoutX="633.0" layoutY="478.0" mnemonicParsing="false" onAction="#switchToCheckoutScene" prefHeight="28.0" prefWidth="82.0" text="Checkout">
+                        <Button fx:id="checkout_btn" layoutX="633.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#switchToCheckoutScene" prefHeight="28.0" prefWidth="82.0" text="Checkout">
                            <font>
                               <Font size="14.0" />
                            </font>

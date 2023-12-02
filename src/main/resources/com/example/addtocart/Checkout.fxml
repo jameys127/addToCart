@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -10,15 +12,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demotry.CheckoutController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.addtocart.checkoutController">
    <children>
       <BorderPane layoutX="350.0" layoutY="200.0" prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <AnchorPane prefHeight="72.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="72.0" prefWidth="900.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="76.0" fitWidth="900.0" layoutY="-4.0" pickOnBounds="true" smooth="false">
+                  <ImageView fitHeight="76.0" fitWidth="157.0" layoutX="744.0" layoutY="-4.0" pickOnBounds="true" smooth="false">
                      <image>
-                        <Image url="@/bluebackground.png" />
+                        <Image url="@../../../assets/DonutLogo.png" />
                      </image>
                   </ImageView>
                   <Text fill="WHITE" layoutX="15.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout" wrappingWidth="185.36777114868164">
@@ -30,55 +32,62 @@
             </AnchorPane>
          </top>
          <left>
-            <AnchorPane fx:id="CompleteBtn" prefHeight="200.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="200.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                <children>
-                  <Text fill="#3037b8" layoutX="376.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your order" wrappingWidth="117.46908950805664">
+                  <Text layoutX="376.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your order" wrappingWidth="117.46908950805664">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text layoutX="379.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: " wrappingWidth="49.846635818481445">
+                  <Text layoutX="379.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: " wrappingWidth="49.846635818481445">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text fx:id="totalText" layoutX="429.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" wrappingWidth="61.569297790527344">
+                  <Text fx:id="totalText" layoutX="427.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" wrappingWidth="61.569297790527344">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text fill="#3037b8" layoutX="17.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shipping address" wrappingWidth="189.6366958618164">
+                  <Text layoutX="17.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shipping address" wrappingWidth="189.6366958618164">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <TextField layoutX="20.0" layoutY="57.0" prefHeight="40.0" prefWidth="128.0" promptText="First name" />
-                  <TextField layoutX="162.0" layoutY="57.0" prefHeight="40.0" prefWidth="158.0" promptText="Last name" />
-                  <TextField layoutX="20.0" layoutY="117.0" prefHeight="40.0" prefWidth="300.0" promptText="Address" />
-                  <TextField layoutX="20.0" layoutY="177.0" prefHeight="40.0" prefWidth="300.0" promptText="Apartment, suite, etc." />
-                  <TextField layoutX="20.0" layoutY="237.0" prefHeight="40.0" prefWidth="300.0" promptText="City" />
-                  <TextField layoutX="20.0" layoutY="297.0" prefHeight="40.0" prefWidth="300.0" promptText="Country/region" />
-                  <TextField layoutX="20.0" layoutY="357.0" prefHeight="40.0" prefWidth="128.0" promptText="State" />
-                  <TextField layoutX="164.0" layoutY="357.0" prefHeight="40.0" prefWidth="155.0" promptText="ZIP code" />
-                  <TextField layoutX="20.0" layoutY="417.0" prefHeight="40.0" prefWidth="300.0" promptText="Email address" />
-                  <Button layoutX="20.0" layoutY="487.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="99.0" text="Return to cart" />
+                  <TextField fx:id="firstNameField" layoutX="20.0" layoutY="57.0" prefHeight="40.0" prefWidth="128.0" promptText="First name" />
+                  <TextField fx:id="lastNameField" layoutX="162.0" layoutY="57.0" prefHeight="40.0" prefWidth="158.0" promptText="Last name" />
+                  <TextField fx:id="addressField" layoutX="20.0" layoutY="117.0" prefHeight="40.0" prefWidth="300.0" promptText="Address" />
+                  <TextField fx:id="apartmentField" layoutX="20.0" layoutY="177.0" prefHeight="40.0" prefWidth="300.0" promptText="Apartment, suite, etc." />
+                  <TextField fx:id="cityField" layoutX="20.0" layoutY="237.0" prefHeight="40.0" prefWidth="300.0" promptText="City" />
+                  <TextField fx:id="countryRegionField" layoutX="20.0" layoutY="297.0" prefHeight="40.0" prefWidth="300.0" promptText="Country/region" />
+                  <TextField fx:id="stateField" layoutX="20.0" layoutY="357.0" prefHeight="40.0" prefWidth="128.0" promptText="State" />
+                  <TextField fx:id="zipCodeField" layoutX="164.0" layoutY="357.0" prefHeight="40.0" prefWidth="155.0" promptText="ZIP code" />
+                  <TextField fx:id="emailAddressField" layoutX="20.0" layoutY="417.0" prefHeight="40.0" prefWidth="300.0" promptText="Email address" />
+                  <Button fx:id="returnToCartButton" layoutX="20.0" layoutY="487.0" mnemonicParsing="false" onMouseClicked="#returnToCart" prefHeight="26.0" prefWidth="99.0" text="Return to cart" />
                   <Text fill="#838383" layoutX="108.0" layoutY="272.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="_______________________________________________________________________" wrappingWidth="498.10594177246094" />
-                  <TextArea fx:id="itemsTextArea" editable="false" layoutX="379.0" layoutY="57.0" prefHeight="170.0" prefWidth="493.0">
+                  <TextArea fx:id="itemsTextArea" editable="false" layoutX="379.0" layoutY="57.0" prefHeight="170.0" prefWidth="493.0" visible="false">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextArea>
-                  <ImageView fitHeight="94.0" fitWidth="211.0" layoutX="379.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="52.0" fitWidth="203.0" layoutX="379.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@/Cardtypeimg.png" />
+                        <Image url="@../../../assets/Cardtypeimg.png" />
                      </image>
                   </ImageView>
-                  <TextField layoutX="379.0" layoutY="366.0" prefHeight="40.0" prefWidth="238.0" promptText="Card number" />
-                  <TextField layoutX="634.0" layoutY="366.0" prefHeight="40.0" prefWidth="238.0" promptText="Cardholder name" />
-                  <Text fill="#838383" layoutX="379.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="________________________________________________________________________" wrappingWidth="521.5523681640625" />
-                  <TextField layoutX="379.0" layoutY="423.0" prefHeight="40.0" prefWidth="238.0" promptText="Expiring date" />
-                  <TextField layoutX="634.0" layoutY="423.0" prefHeight="40.0" prefWidth="238.0" promptText="CVC" />
-                  <Button fx:id="completeCheckoutButton" layoutX="738.0" layoutY="487.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="Complete checkout" />
+                  <TextField fx:id="cardNumberField" layoutX="379.0" layoutY="366.0" prefHeight="40.0" prefWidth="238.0" promptText="Card number" />
+                  <TextField fx:id="cardholderNameField" layoutX="634.0" layoutY="366.0" prefHeight="40.0" prefWidth="238.0" promptText="Cardholder name" />
+                  <Text fill="#838383" layoutX="379.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="________________________________________________________________________" wrappingWidth="521.5523681640625" />
+                  <TextField fx:id="expiryDateField" layoutX="379.0" layoutY="423.0" prefHeight="40.0" prefWidth="238.0" promptText="Expiring date: 00/00" />
+                  <TextField fx:id="cvcField" layoutX="634.0" layoutY="423.0" prefHeight="40.0" prefWidth="238.0" promptText="CVC" />
+                  <Button fx:id="completeCheckoutButton" layoutX="738.0" layoutY="487.0" mnemonicParsing="false" onMouseClicked="#completeCheckOut" prefHeight="26.0" prefWidth="132.0" text="Complete checkout" />
+                  <TableView fx:id="orderTable" layoutX="374.0" layoutY="38.0" prefHeight="225.0" prefWidth="494.0">
+                    <columns>
+                      <TableColumn fx:id="tableItem" prefWidth="170.0" text="Item" />
+                      <TableColumn fx:id="tableAmount" minWidth="0.0" prefWidth="154.0" text="Amount" />
+                        <TableColumn fx:id="tablePrice" minWidth="0.0" prefWidth="169.0" text="Price" />
+                    </columns>
+                  </TableView>
                </children>
             </AnchorPane>
          </left>
