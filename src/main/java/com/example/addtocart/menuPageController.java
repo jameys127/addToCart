@@ -175,7 +175,6 @@ public class menuPageController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
         stage.setTitle("Menu");
         stage.setScene(new Scene(root));
-
     }
     @FXML
     void signOutButton(MouseEvent event) throws IOException {
