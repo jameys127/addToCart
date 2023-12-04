@@ -12,14 +12,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.*;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 public class checkoutController implements Initializable {
     @FXML
@@ -44,8 +46,9 @@ public class checkoutController implements Initializable {
     private Button returnToCartButton;
     private ObservableList<Product> tableData = null;
     private double total = 0;
+    private String email = null;
     @FXML
-    void completeCheckOut(MouseEvent event) {
+    void completeCheckOut(MouseEvent event) throws MessagingException, IOException {
         setupCheckoutButton();
     }
 
@@ -97,10 +100,25 @@ public class checkoutController implements Initializable {
         updateTotal();
     }
 
-    private void setupCheckoutButton() {
+    private void setupCheckoutButton() throws MessagingException, IOException {
             if (allFieldsFilled() && isValidPaymentDetails()) {
+                email = emailAddressField.getText();
                 showAlert("Checkout Completed", "Checkout is completed, thank you for shopping with us!");
                 sendEmailReceipt();
+                Connection connection = null;
+                PreparedStatement statement = null;
+                try {
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bigbitedonuts", "root", "dinosaur1234");
+                    statement = connection.prepareStatement("DELETE FROM bigbitedonuts.order");
+                    statement.executeUpdate();
+
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+                Stage stage = (Stage) completeCheckoutButton.getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
+                stage.setTitle("Welcome");
+                stage.setScene(new Scene(root));
             } else {
                 showAlert("Error", "Please fill in all fields correctly.");
             }
@@ -151,10 +169,65 @@ public class checkoutController implements Initializable {
         totalText.setText(String.valueOf(d));
     }
 
-    private void sendEmailReceipt() {
-        String email = emailAddressField.getText();
-        String receipt = itemsTextArea.getText() + "\nTotal: " + totalText.getText();
-        // Email sending logic here, e.g., using JavaMail API
+    private void sendEmailReceipt() throws MessagingException {
+        List<Product> listOfProducts = new ArrayList<>();
+        Product product = null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bigbitedonuts", "root", "dinosaur1234");
+            statement = connection.prepareStatement("SELECT * FROM bigbitedonuts.order");
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                product = new Product(resultSet.getString("name"),
+                        resultSet.getDouble("price"),
+                        resultSet.getString("image"),
+                        resultSet.getInt("quantity"));
+                listOfProducts.add(product);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", true);
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", 587);
+        properties.put("mail.smtp.starttls.enable", true);
+        properties.put("mail.transport.protocl", "smtp");
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("realbigbitedonuts@gmail.com", "aisopgunjzmkvmle");
+            }
+        });
+
+        Message message = new MimeMessage(session);
+        message.setSubject("Big Bite Donuts Receipt");
+
+        Address addressTo = new InternetAddress(email);
+        message.setRecipient(Message.RecipientType.TO, addressTo);
+
+        MimeMultipart multipart = new MimeMultipart();
+        MimeBodyPart firstPart = new MimeBodyPart();
+
+        firstPart.setText("Thank you for your purchase!\n\nYour order:\n");
+        multipart.addBodyPart(firstPart);
+
+        for(int i = 0; i < listOfProducts.size(); i++){
+            MimeBodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText("\n#" + listOfProducts.get(i).getQuantity() + "   " + listOfProducts.get(i).getName() + "   " + listOfProducts.get(i).getPrice());
+            multipart.addBodyPart(messageBodyPart);
+        }
+
+        MimeBodyPart lastPart = new MimeBodyPart();
+        lastPart.setText("\n\nYour Total: " + total);
+        multipart.addBodyPart(lastPart);
+
+        message.setContent(multipart);
+        Transport.send(message);
+
     }
 
     @Override
