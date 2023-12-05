@@ -63,7 +63,7 @@
                   <TextField fx:id="stateField" layoutX="20.0" layoutY="357.0" prefHeight="40.0" prefWidth="128.0" promptText="State" />
                   <TextField fx:id="zipCodeField" layoutX="164.0" layoutY="357.0" prefHeight="40.0" prefWidth="155.0" promptText="ZIP code" />
                   <TextField fx:id="emailAddressField" layoutX="20.0" layoutY="417.0" prefHeight="40.0" prefWidth="300.0" promptText="Email address" />
-                  <Button fx:id="returnToCartButton" layoutX="20.0" layoutY="487.0" mnemonicParsing="false" onMouseClicked="#returnToCart" prefHeight="26.0" prefWidth="99.0" text="Return to cart" />
+                  <Button fx:id="returnToCartButton" layoutX="20.0" layoutY="487.0" mnemonicParsing="false" onMouseClicked="#returnToCart" prefHeight="26.0" prefWidth="99.0" styleClass="radius" stylesheets="@../../../assets/mainFormDesign.css" text="Return to cart" />
                   <Text fill="#838383" layoutX="108.0" layoutY="272.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="_______________________________________________________________________" wrappingWidth="498.10594177246094" />
                   <TextArea fx:id="itemsTextArea" editable="false" layoutX="379.0" layoutY="57.0" prefHeight="170.0" prefWidth="493.0" visible="false">
                      <font>
@@ -80,7 +80,7 @@
                   <Text fill="#838383" layoutX="379.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="________________________________________________________________________" wrappingWidth="521.5523681640625" />
                   <TextField fx:id="expiryDateField" layoutX="379.0" layoutY="423.0" prefHeight="40.0" prefWidth="238.0" promptText="Expiring date: 00/00" />
                   <TextField fx:id="cvcField" layoutX="634.0" layoutY="423.0" prefHeight="40.0" prefWidth="238.0" promptText="CVC" />
-                  <Button fx:id="completeCheckoutButton" layoutX="738.0" layoutY="487.0" mnemonicParsing="false" onMouseClicked="#completeCheckOut" prefHeight="26.0" prefWidth="132.0" text="Complete checkout" />
+                  <Button fx:id="completeCheckoutButton" layoutX="738.0" layoutY="487.0" mnemonicParsing="false" onMouseClicked="#completeCheckOut" prefHeight="26.0" prefWidth="132.0" styleClass="radius" stylesheets="@../../../assets/mainFormDesign.css" text="Complete checkout" />
                   <TableView fx:id="orderTable" layoutX="374.0" layoutY="38.0" prefHeight="225.0" prefWidth="494.0">
                     <columns>
                       <TableColumn fx:id="tableItem" prefWidth="170.0" text="Item" />

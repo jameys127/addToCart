@@ -37,7 +37,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_username" layoutX="144.0" layoutY="143.0" prefHeight="25.0" prefWidth="149.0" promptText="Enter Username" />
+            <TextField fx:id="tf_username" layoutX="142.0" layoutY="146.0" prefHeight="25.0" prefWidth="149.0" promptText="Enter Username" />
             <Button fx:id="button_login" layoutX="120.0" layoutY="263.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="118.0" style="-fx-cursor: hand; -fx-background-color: #ff0000;" text="Login">
                <font>
                   <Font size="18.0" />
@@ -53,7 +53,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <PasswordField fx:id="tf_password" layoutX="139.0" layoutY="207.0" promptText="Enter Password" />
+            <PasswordField fx:id="tf_password" layoutX="142.0" layoutY="210.0" promptText="Enter Password" />
          </children>
       </AnchorPane>
    </children>

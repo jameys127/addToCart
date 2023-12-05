@@ -41,7 +41,6 @@ public class cartController implements Initializable {
     private ObservableList<Product> tableData = null;
     private double total = 0;
 
-
     public ObservableList<Product> listData(){
         ObservableList<Product> dummy = FXCollections.observableArrayList();
         Product product = null;
@@ -128,22 +127,6 @@ public class cartController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("Checkout.fxml"));
         stage.setTitle("CheckOut");
         stage.setScene(new Scene(root));
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Checkout.fxml"));
-//            Parent checkoutRoot = loader.load();
-//
-//            CheckoutController checkoutController = loader.getController();
-//             Assuming you have a mechanism to create or obtain a Checkout object
-//            Checkout checkout = new Checkout(cartData);
-//            checkoutController.setCheckoutData(checkout); // Set the checkout data here
-//
-//            Scene checkoutScene = new Scene(checkoutRoot);
-//            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//            stage.setScene(checkoutScene);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
     }
 
     @Override

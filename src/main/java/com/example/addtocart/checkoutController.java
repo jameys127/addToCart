@@ -47,6 +47,8 @@ public class checkoutController implements Initializable {
     private ObservableList<Product> tableData = null;
     private double total = 0;
     private String email = null;
+    private String firstName = null;
+    private String lastName = null;
     @FXML
     void completeCheckOut(MouseEvent event) throws MessagingException, IOException {
         setupCheckoutButton();
@@ -103,6 +105,8 @@ public class checkoutController implements Initializable {
     private void setupCheckoutButton() throws MessagingException, IOException {
             if (allFieldsFilled() && isValidPaymentDetails()) {
                 email = emailAddressField.getText();
+                firstName = firstNameField.getText();
+                lastName = lastNameField.getText();
                 showAlert("Checkout Completed", "Checkout is completed, thank you for shopping with us!");
                 sendEmailReceipt();
                 Connection connection = null;
@@ -212,7 +216,7 @@ public class checkoutController implements Initializable {
         MimeMultipart multipart = new MimeMultipart();
         MimeBodyPart firstPart = new MimeBodyPart();
 
-        firstPart.setText("Thank you for your purchase!\n\nYour order:\n");
+        firstPart.setText("Thank you for your purchase " + firstName + " " + lastName + "!\n\nYour order:\n");
         multipart.addBodyPart(firstPart);
 
         for(int i = 0; i < listOfProducts.size(); i++){

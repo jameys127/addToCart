@@ -100,7 +100,7 @@
                               <Image url="@../../../assets/istockphoto-1094440264-612x612.jpg" />
                            </image>
                         </ImageView>
-                        <Label layoutX="550.0" layoutY="152.0" prefHeight="311.0" prefWidth="517.0" text="We are 3rd generation donut bakers that want to create an easy way to send our donuts to all corners of northridge. We are passionate about art of breakfast baking and we will make sure that your order arrives at your house with same-day delivery, hot and delicious. Its our GUARANTEE!" textFill="RED" wrapText="true">
+                        <Label layoutX="550.0" layoutY="152.0" prefHeight="311.0" prefWidth="517.0" text="We come from a long line of donut bakers that want to create an easy way to send our donuts to all corners of northridge. We are passionate about the art of dessert and breakfast baking, and we will make sure that your order arrives at your house with same-day delivery, hot and delicious. Its our GUARANTEE!" textFill="RED" wrapText="true">
                            <font>
                               <Font name="Bodoni MT" size="25.0" />
                            </font>
